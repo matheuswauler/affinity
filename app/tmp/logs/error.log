@@ -224,3 +224,12 @@ Stack Trace:
 #3 /Applications/MAMP/htdocs/affinity/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-09-23 19:17:53 Error: [MissingControllerException] Controller class AffinityController could not be found.
+Exception Attributes: array (
+  'class' => 'AffinityController',
+  'plugin' => NULL,
+)
+Request URL: /affinity/Affinity/
+Stack Trace:
+#0 C:\xampp\htdocs\affinity\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
