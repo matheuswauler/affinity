@@ -1,5 +1,5 @@
 <?php
 
-class User extends AppModel {
+class Personalitie extends AppModel {
 	
 }
