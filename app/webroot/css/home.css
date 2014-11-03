@@ -15,7 +15,7 @@
 	width: 100%;
 	height: auto;
 }
-.home_video_container header{
+.institucional_header{
 	/*background: rgba(255,255,255,0.8);*/
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
@@ -29,20 +29,20 @@
 	padding: 10px 0;
 	position: absolute;
 	top: 0;
-	z-index: 2;
+	z-index: 3;
 	overflow: hidden;
 }
-.home_video_container nav{
+.institucional_header nav{
 	float: right;
 }
-.home_video_container nav a{
+.institucional_header nav a{
 	display: inline-block;
 	text-decoration: none;
 	color: #ffffff;
 	margin: 0 0 0 15px;
 	transition: color 0.3s ease;
 }
-.home_video_container nav a.signup_link{
+.institucional_header nav a.signup_link{
 	font-weight: 700;
 	font-size: 16px;
 	color: #fff;
@@ -51,20 +51,20 @@
 	border-radius: 3px;
 	transition: background 0.3s ease;
 }
-.home_video_container nav a:hover{
+.institucional_header nav a:hover{
 	color: #ff5d00;
 }
-.home_video_container nav a.signup_link:hover{
+.institucional_header nav a.signup_link:hover{
 	background: #fff;
 }
 .home_video_container .login_box{
 	position: absolute;
 	z-index: 2;
 	top: 140px;
-	background: rgba(0,0,0,0.7);
-	background: rgba(255,255,255,0.8);
+	/*background: rgba(0,0,0,0.7);*/
+	/*background: rgba(255,255,255,0.8);*/
 	color: #fff;
-	color: inherit;
+	/*color: inherit;*/
 	padding: 50px;
 	border-radius: 5px;
 	max-width: 100%;
@@ -72,7 +72,8 @@
 	box-sizing: border-box;
 	left: 50%;
 	margin-left: -200px;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+	/*box-shadow: 0 10px 20px rgba(0,0,0,0.4);*/
+	text-shadow: 1px 1px rgba(0,0,0,0.3);
 }
 .home_video_container .login_box h1{
 	margin: 0;
@@ -116,7 +117,7 @@
 	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
 }
 footer.footer_home{
-	background: #ddd;
+	background: #eee;
 	padding: 50px 0;
 	width: 100%;
 	font-size: 13px;
@@ -126,4 +127,100 @@ footer.footer_home nav a{
 	margin-right: 15px;
 	text-decoration: none;
 	color: #222;
+}
+
+.imagem_fundo{
+	height: 200px;
+	background: url('../img/institutional.jpg') center -130px no-repeat;
+	background-size: cover;
+}
+.imagem_fundo h1{
+	margin: 0;
+	font-weight: 700;
+	font-size: 48px;
+	color: #fff;
+	padding-top: 130px;
+	text-align: left;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+}
+
+.page_descr{
+	font-size: 30px;
+	font-weight: 300;
+	color: #a5a5a5;
+	text-align: center;
+	max-width: 600px;
+	margin: 20px auto;
+}
+
+.steps{
+	width: 100%;
+	padding: 0;
+	margin: 30px 0;
+	display: block;
+	list-style: none;
+	border-radius: 5px;
+	overflow: hidden;
+	background: #ff9359;
+}
+.steps li{
+	width: 33.333%;
+	float: left;
+	margin: 0;
+	display: block;
+	font-weight: 700;
+	text-align: center;
+	font-size: 25px;
+	color: #fff;
+	box-sizing: border-box;
+	padding: 10px 0;
+	border-left: 1px solid rgba(255,255,255,0.2);
+}
+.steps li.active{
+	background: #ff5d00;
+}
+.steps li abbr{
+	width: 40px;
+	display: inline-block;
+	height: 40px;
+	font-weight: 300;
+	border: 1px solid rgba(255,255,255,0.5);
+	border-radius: 100%;
+	margin-right: 10px;
+	line-height: 40px;
+}
+
+div.input{
+	float: left;
+	width: 50%;
+	margin: 10px 0;
+}
+
+div.input input,
+#UserSex{
+	width: 85%;
+}
+div.input label{
+	color: #aaa;
+}
+.input.right{
+	text-align: right;
+}
+.registration_form{
+	margin: 50px 0;
+}
+.registration_form input[type=submit]{
+	background: #ff5d00;
+	border: 0;
+	padding: 15px 30px;
+	font-weight: 700;
+	font-size: 18px;
+	color: #fff;
+	border-radius: 3px;
+	outline: none;
+	margin: 10px 0;
+	cursor: pointer;
+}
+.registration_form .submit{
+	text-align: right;
 }

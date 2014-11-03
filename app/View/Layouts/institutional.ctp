@@ -1,15 +1,27 @@
-<section class="home_video_container">
-	<div class="video_wrapper">
-		<video autoplay loop muted>
-			<source src="app/webroot/videos/home.mp4" type="video/mp4">
-		</video>
-	</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<?php echo $this->Html->charset(); ?>
+	<title>
+		Teste
+	</title>
+	<?php
+		echo $this->Html->meta('icon');
 
-	<header>
+		echo $this->Html->css('default');
+		echo $this->Html->css('home');
+
+		echo $this->fetch('meta');
+		echo $this->fetch('css');
+		echo $this->fetch('script');
+	?>
+</head>
+<body>
+	<header class="institucional_header">
 		<div class="content">
 			<nav>
 				<?php
-					echo $this->Html->link('Inicial', '');
+					echo $this->Html->link('Inicial', '/');
 					echo $this->Html->link('Sobre', '');
 					echo $this->Html->link('Equipe', '');
 					echo $this->Html->link('Ajuda', '');
@@ -19,24 +31,10 @@
 		</div>
 	</header>
 
-	<div class="login_box">
-		<h1>Entrar</h1>
-		<form action="" method="post">
-			<p>
-				<label for="email">E-mail</label>
-				<input type="email" name="email" id="email" />
-			</p>
+	<?php echo $this->Session->flash(); ?>
 
-			<p>
-				<label for="senha">Senha</label>
-				<input type="password" name="senha" id="senha" />
-			</p>
-			<input type="submit" value="OK" />
-		</form>
-	</div>
+	<?php echo $this->fetch('content'); ?>
 
-
-</section>
 	<footer class="footer_home">
 		<div class="content">
 			<nav>
@@ -52,3 +50,6 @@
 			<p>Portugues - Brasil</p>
 		</div>
 	</footer>
+
+</body>
+</html>

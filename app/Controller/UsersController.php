@@ -7,7 +7,7 @@ class UsersController extends AppController {
 	public $components = array('Security');
 
 	public function register(){
-		$this->layout = 'registration';
+		$this->layout = "institutional";
 
 		$isPost = $this->request->isPost();
 
