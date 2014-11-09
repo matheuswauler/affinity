@@ -78,7 +78,7 @@
 .home_video_container .login_box h1{
 	margin: 0;
 	font-size: 60px;
-	font-weight: 300;
+	font-weight: 400;
 	text-align: center;
 	letter-spacing: -2px;
 	line-height: 1em;
@@ -97,7 +97,7 @@
 	margin: 0;
 	border-radius: 3px;
 	font-size: 14px;
-	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Helvetica Neue, Arial, sans-serif;
 }
 .home_video_container .login_box form p input{
 	padding: 10px;
@@ -114,7 +114,7 @@
 	border: 0;
 	cursor: pointer;
 	font-size: 16px;
-	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Helvetica Neue, Arial, sans-serif;
 }
 footer.footer_home{
 	background: #eee;

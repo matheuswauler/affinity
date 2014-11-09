@@ -129,7 +129,7 @@ if (!function_exists('sortByKey')) {
  * @param string $sortBy Sort by this key
  * @param string $order Sort order asc/desc (ascending or descending).
  * @param int $type Type of sorting to perform
- * @return mixed Sorted array
+ * @return array|null Sorted array, or null if not an array.
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#sortByKey
  */
 	function sortByKey(&$array, $sortBy, $order = 'asc', $type = SORT_NUMERIC) {
@@ -284,7 +284,7 @@ if (!function_exists('env')) {
  * environment information.
  *
  * @param string $key Environment variable name.
- * @return string Environment variable setting.
+ * @return string|bool|null Environment variable setting.
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#env
  */
 	function env($key) {
@@ -389,7 +389,7 @@ if (!function_exists('cache')) {
  * @param mixed $expires A valid strtotime string when the data expires.
  * @param string $target The target of the cached data; either 'cache' or 'public'.
  * @return mixed The contents of the temporary file.
- * @deprecated Will be removed in 3.0. Please use Cache::write() instead.
+ * @deprecated 3.0.0 Will be removed in 3.0. Please use Cache::write() instead.
  */
 	function cache($path, $data = null, $expires = '+1 day', $target = 'cache') {
 		if (Configure::read('Cache.disable')) {

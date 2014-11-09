@@ -5,7 +5,7 @@ html, body{
 	padding: 0;
 	font-size: 100%;
 	color: #222222;
-	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-family: 'Open Sans', Helvetica, Helvetica Neue, Arial, sans-serif;
 }
 .content{
 	max-width: 1000px;
@@ -53,7 +53,11 @@ select{
     height: 44px;
     box-sizing: border-box;
 }
-
+div.error-message{
+    color: red;
+    font-size: 11px;
+    margin: 5px 0;
+}
 
 
 
