@@ -16,11 +16,11 @@ class UsersController extends AppController {
 	}
 
 	public function login(){
-		if(!empty($this->request->data['username']) && !empty($this->request->data['senha'])){
+		if(!empty($this->request->data['Page']['username']) && !empty($this->request->data['Page']['senha'])){
 			$user = $this->User->find('first', array(
 				'conditions' => array(
-					'User.username' => $this->request->data['username'],
-					'User.password' => $password_confirmation = Security::hash($this->data['senha'], null, true)
+					'User.username' => $this->request->data['Page']['username'],
+					'User.password' => $password_confirmation = Security::hash($this->request->data['Page']['senha'], null, true)
 				)
 			));
 			if(!empty($user)){
