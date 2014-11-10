@@ -1,2 +1,15 @@
 @charset "utf-8";
 
+.imagem_wrapper{
+	width: 185px;
+	height: 185px;
+	overflow: hidden;
+	border: 1px solid #cccccc;
+	border-radius: 100%;
+	margin: 30px auto;
+}
+.imagem_wrapper img{
+	width: 185px;
+	height: 185px;
+	display: block;
+}

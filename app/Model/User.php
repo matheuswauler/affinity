@@ -97,13 +97,14 @@ class User extends AppModel {
 
 
 	// Tudo que estiver abaixo daqui e para upload da imagem
-	public function beforeSave($options = array()) {  
-	    if(!empty($this->data['User']['imagem_perfil']['name'])) {  
-	        $this->data['User']['imagem_perfil'] = $this->upload($this->data['User']['imagem_perfil']);  
-	    } else {  
-	        unset($this->data['User']['imagem_perfil']);  
-	    }  
-	}
+	// public function beforeSave($options = array()) {
+	//     if(!empty($this->data['User']['imagem_perfil']['name'])) {
+	//         $this->data['User']['imagem_perfil'] = $this->upload($this->data['User']['imagem_perfil'], 'img/perfil');  
+	//     } else {  
+	//         unset($this->data['User']['imagem_perfil']);  
+	//     }  
+	//     return true;
+	// }
 
 	/** 
 	 * Organiza o upload. 
@@ -112,7 +113,7 @@ class User extends AppModel {
 	 * @param String $data 
 	*/   
 	public function upload($imagem = array(), $dir = 'img'){  
-	    $dir = WWW_ROOT.$dir.DS;  
+	    $dir = WWW_ROOT.$dir.DS;
 	  
 	    if(($imagem['error']!=0) and ($imagem['size']==0)) {  
 	        throw new NotImplementedException('Alguma coisa deu errado, o upload retornou erro '.$imagem['error'].' e tamanho '.$imagem['size']);  
@@ -151,13 +152,13 @@ class User extends AppModel {
 	public function checa_nome($imagem, $dir) {  
 	    $imagem_info = pathinfo($dir.$imagem['name']);  
 	    $imagem_nome = $this->trata_nome($imagem_info['filename']).'.'.$imagem_info['extension'];  
-	    debug($imagem_nome);  
+	    // debug($imagem_nome);
 	    $conta = 2;  
 	    while (file_exists($dir.$imagem_nome)) {  
 	        $imagem_nome  = $this->trata_nome($imagem_info['filename']).'-'.$conta;  
 	        $imagem_nome .= '.'.$imagem_info['extension'];  
 	        $conta++;  
-	        debug($imagem_nome);  
+	        // debug($imagem_nome);  
 	    }  
 	    $imagem['name'] = $imagem_nome;  
 	    return $imagem;  

@@ -20,6 +20,8 @@ class UsersController extends AppController {
 			$this->request->data['User']['role'] = 'nor';
 			$last = $this->User->save($this->request->data);
 			if($last){
+				$current_user = $this->User->find('first', array('conditions' => array('User.id' => $this->User->id)));
+				$this->Session->write('current_user', $current_user);
 				$this->redirect(array('action' => 'perfil'));
 			} else {
 				//'erro'
@@ -29,5 +31,24 @@ class UsersController extends AppController {
 
 	public function perfil(){
 		$this->layout = "institutional";
+
+		$current_user = $this->Session->read('current_user');
+
+		$isPost = $this->request->isPost();
+		if($isPost && !empty($this->request->data)){
+			if(!empty($this->request->data['User']['imagem_perfil'])){
+				$nome_imagem = $this->User->upload($this->request->data['User']['imagem_perfil'], 'img/perfil');
+
+				$this->User->id = $current_user['User']['id'];
+				if($this->User->saveField('imagem_perfil', $nome_imagem)){
+					$current_user = $this->User->find('first', array('conditions' => array('User.id' => $current_user['User']['id'])));
+					$this->Session->write('current_user', $current_user);
+
+					echo "imagem do perfil gravaga";
+				} else {
+					$erro = "Erro ao salvar";
+				}
+			}
+		}
 	}
 }

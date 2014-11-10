@@ -38,8 +38,6 @@
 		echo $this->Form->input('password', array('value'=>'', 'label' => '', 'placeholder' => 'Senha'));
 
 		echo $this->Form->input('password_confirm', array('value'=>'', 'type'=>'password', 'label' => '', 'placeholder' => 'Confirmar Senha', 'div' => 'input right'));
-
-		// echo $this->Form->file('imagem_perfil');
 		
 		echo $this->Form->end('Registrar');
 

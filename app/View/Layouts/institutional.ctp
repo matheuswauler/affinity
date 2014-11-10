@@ -1,3 +1,7 @@
+<?php
+	$current_user = $this->Session->read('current_user');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +15,7 @@
 
 		echo $this->Html->css('default');
 		echo $this->Html->css('home');
+		echo $this->Html->css('registration');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -26,7 +31,12 @@
 					echo $this->Html->link('Sobre', '');
 					echo $this->Html->link('Equipe', '');
 					echo $this->Html->link('Ajuda', '');
-					echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
+
+					if(is_null($current_user) || empty($current_user)){
+						echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
+					} else {
+						echo 'Olá, ' . $current_user['User']['name'];
+					}
 				?>
 			</nav>
 		</div>
@@ -44,11 +54,10 @@
 					echo $this->Html->link('Sobre', '');
 					echo $this->Html->link('Equipe', '');
 					echo $this->Html->link('Ajuda', '');
-					echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'register', 'full_base' => true));
 				?>
 			</nav>
 
-			<p>Portugues - Brasil</p>
+			<p>Português - Brasil</p>
 		</div>
 	</footer>
 
