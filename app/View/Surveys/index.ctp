@@ -15,7 +15,7 @@
 		Responda as questões abaixo para se enquadrar em um perfil.
 	</p>
 
-	<?= $this->Form->create(array('action' => 'register', 'class' => 'survey_form')); ?>
+	<?= $this->Form->create(array('action' => 'index', 'class' => 'survey_form clearfix')); ?>
 		<? foreach ($survey as $key => $s) { ?>
 			
 			<article class="question_wrapper">
@@ -33,5 +33,5 @@
 			</article>
 			
 		<? } ?>
-	<?= $this->Form->end('Registrar'); ?>
+	<?= $this->Form->end('Confirmar'); ?>
 </div>

@@ -68,10 +68,10 @@
 		<div class="content">
 			<nav>
 				<?php
-					echo $this->Html->link('Inicial', '');
-					echo $this->Html->link('Sobre', '');
-					echo $this->Html->link('Equipe', '');
-					echo $this->Html->link('Ajuda', '');
+					echo $this->Html->link('Inicial', '/');
+					echo $this->Html->link('Sobre', '/pages/sobre');
+					echo $this->Html->link('Equipe', '/pages/equipe');
+					echo $this->Html->link('Ajuda', '/pages/ajuda');
 				?>
 			</nav>
 

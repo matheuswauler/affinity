@@ -22,7 +22,8 @@
 .upload_form input[type=file]{
 	width: 100%;
 }
-.upload_form input[type=submit]{
+.upload_form input[type=submit],
+.survey_form input[type=submit]{
 	background: #ff5d00;
 	border: 0;
 	padding: 15px 30px;
@@ -34,10 +35,16 @@
 	margin: 10px 0;
 	cursor: pointer;
 }
+.survey_form input[type=submit]{
+	float: right;
+}
 .upload_form a{
 	color: #ff5d00;
 }
 
+.survey_form{
+	margin: 30px 0;
+}
 .survey_form .question_wrapper{
 	width: 49%;
 	display: inline-block;
