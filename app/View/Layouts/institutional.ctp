@@ -17,6 +17,9 @@
 		echo $this->Html->css('home');
 		echo $this->Html->css('registration');
 
+		echo $this->Html->script('jquery-2.1.1.min');
+		echo $this->Html->script('javascript');
+
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -35,14 +38,29 @@
 					if(is_null($current_user) || empty($current_user)){
 						echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
 					} else {
+						echo '<span class="current_user_header">';
+						if(empty($current_user['User']['imagem_perfil'])){
+							echo '<img src="../app/webroot/img/default_perfil.png' .'" />';
+						} else {
+							echo '<img src="../app/webroot/img/perfil/' . $current_user['User']['imagem_perfil'] .'" />';
+						}
 						echo 'Olá, ' . $current_user['User']['name'];
+
+						echo $this->Html->link('Sair', '/users/logout');
+
+						echo '</span>';
 					}
 				?>
 			</nav>
 		</div>
 	</header>
 
-	<?php echo $this->Session->flash(); ?>
+	<?php
+		$error_msg = $this->Session->flash();
+		if(!is_null($error_msg) && !empty($error_msg)){
+			echo '<div class="error_msg">' . $error_msg . '</div>';
+		}
+	?>
 
 	<?php echo $this->fetch('content'); ?>
 

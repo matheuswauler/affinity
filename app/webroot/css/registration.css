@@ -13,3 +13,27 @@
 	height: 185px;
 	display: block;
 }
+
+.upload_form{
+	width: 50%;
+	margin: 30px auto;
+	text-align: center;
+}
+.upload_form input[type=file]{
+	width: 100%;
+}
+.upload_form input[type=submit]{
+	background: #ff5d00;
+	border: 0;
+	padding: 15px 30px;
+	font-weight: 700;
+	font-size: 18px;
+	color: #fff;
+	border-radius: 3px;
+	outline: none;
+	margin: 10px 0;
+	cursor: pointer;
+}
+.upload_form a{
+	color: #ff5d00;
+}

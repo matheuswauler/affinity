@@ -41,6 +41,7 @@ input[type=password],
 input[type=email],
 input[type=tel],
 input[type=number],
+input[type=file],
 textarea,
 select{
     border: 3px solid #ddd;
@@ -57,6 +58,23 @@ div.error-message{
     color: red;
     font-size: 11px;
     margin: 5px 0;
+}
+.error_msg{
+    position: absolute;
+    top: 70px;
+    z-index: 99999;
+    width: 400px;
+    font-size: 13px;
+    color: #333333;
+    background: url('../img/error.svg') 10px 10px no-repeat #f7de62;
+    background-size: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 10px 10px 10px 40px;
+    border-radius: 5px;
+    left: 50%;
+    margin-left: -200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 

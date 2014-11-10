@@ -7,17 +7,13 @@
 
 	<div class="login_box">
 		<h1>Entrar</h1>
-		<form action="" method="post">
-			<p>
-				<label for="email">E-mail</label>
-				<input type="email" name="email" id="email" />
-			</p>
+		<?php
+			echo $this->Form->create(array('url' => $this->Html->url(array('controller' => 'Users','action' => 'login'), true)));
 
-			<p>
-				<label for="senha">Senha</label>
-				<input type="password" name="senha" id="senha" />
-			</p>
-			<input type="submit" value="OK" />
-		</form>
+			echo $this->Form->input('username', array('label' => 'Username'));
+			echo $this->Form->input('senha', array('label' => 'Senha', 'type' => 'password'));
+
+			echo $this->Form->end('OK');
+		?>
 	</div>
 </section>

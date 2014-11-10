@@ -29,13 +29,16 @@
 		?>
 	</div>
 
-	<?php
+	<div class="upload_form">
+		<?php
 
-		echo $this->Form->create(array('action' => 'perfil', 'class' => 'upload_form', 'type' => 'file'));
+			echo $this->Form->create(array('action' => 'perfil', 'class' => '', 'type' => 'file'));
 
-		echo $this->Form->file('imagem_perfil');
+			echo $this->Form->file('imagem_perfil');
 
-		echo $this->Form->end('Upload');
+			echo $this->Form->end('Upload');
 
-	?>
+			echo $this->Html->link('Prosseguir sem adicionar imagem', '/surveys/index');
+		?>
+	</div>
 </div>
