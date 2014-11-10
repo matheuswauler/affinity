@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array('Page', 'User');
 
 /**
  * Displays a view
@@ -66,6 +66,16 @@ class PagesController extends AppController {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
+
+		$pages = $this->Page->find('all', array(
+			'order' => array('Page.id ASC')
+		));
+		$this->set('pages', $pages);
+
+		$adm_users = $this->User->find('all', array(
+			'conditions' => array('User.role' => 'adm')
+		));
+		$this->set('adm_users', $adm_users);
 
 		try {
 			$this->render(implode('/', $path));

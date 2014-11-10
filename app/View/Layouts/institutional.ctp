@@ -31,18 +31,18 @@
 			<nav>
 				<?php
 					echo $this->Html->link('Inicial', '/');
-					echo $this->Html->link('Sobre', '');
-					echo $this->Html->link('Equipe', '');
-					echo $this->Html->link('Ajuda', '');
+					echo $this->Html->link('Sobre', '/pages/sobre');
+					echo $this->Html->link('Equipe', '/pages/equipe');
+					echo $this->Html->link('Ajuda', '/pages/ajuda');
 
 					if(is_null($current_user) || empty($current_user)){
 						echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
 					} else {
 						echo '<span class="current_user_header">';
 						if(empty($current_user['User']['imagem_perfil'])){
-							echo '<img src="../app/webroot/img/default_perfil.png' .'" />';
+							echo '<img src="'. $this->Html->url('/', true) .'app/webroot/img/default_perfil.png' .'" />';
 						} else {
-							echo '<img src="../app/webroot/img/perfil/' . $current_user['User']['imagem_perfil'] .'" />';
+							echo '<img src="'. $this->Html->url('/', true) .'app/webroot/img/perfil/' . $current_user['User']['imagem_perfil'] .'" />';
 						}
 						echo 'Olá, ' . $current_user['User']['name'];
 
