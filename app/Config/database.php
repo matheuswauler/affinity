@@ -71,7 +71,7 @@ class DATABASE_CONFIG {
                 'password'   => 'root',
                 'database'   => 'affinity',
                 'prefix'     => '',
-                //'encoding' => 'utf8',
+                'encoding' => 'utf8',
         );
 
         public $test = array(
@@ -82,6 +82,6 @@ class DATABASE_CONFIG {
                 'password'   => 'root',
                 'database'   => 'affinity',
                 'prefix'     => '',
-                //'encoding' => 'utf8',
+                'encoding' => 'utf8',
         );
 }

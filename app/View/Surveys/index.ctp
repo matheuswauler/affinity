@@ -15,13 +15,23 @@
 		Responda as questões abaixo para se enquadrar em um perfil.
 	</p>
 
-	<?php
-
-		echo $this->Form->create(array('action' => 'register', 'class' => 'registration_form'));
-
-		echo $this->Form->input('sex', array('label' => '', 'options' => array('Não', 'Sim'), 'div' => 'input right'));
-		
-		echo $this->Form->end('Registrar');
-
-	?>
+	<?= $this->Form->create(array('action' => 'register', 'class' => 'survey_form')); ?>
+		<? foreach ($survey as $key => $s) { ?>
+			
+			<article class="question_wrapper">
+				<header class="clearfix">
+					<strong><?= $key+1 ?></strong>
+					<div class="question_description">
+						<?= $s['Survey']['question'] ?>
+					</div>
+				</header>
+				<?= $this->Form->input('question_' . $s['Survey']['id'], array(
+					'type' => 'radio',
+					'label' => '',
+					'options' => array('Não', 'Sim')
+				)); ?>
+			</article>
+			
+		<? } ?>
+	<?= $this->Form->end('Registrar'); ?>
 </div>

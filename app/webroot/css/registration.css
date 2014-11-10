@@ -37,3 +37,45 @@
 .upload_form a{
 	color: #ff5d00;
 }
+
+.survey_form .question_wrapper{
+	width: 49%;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 20px 40px;
+	vertical-align: top;
+	color: #555;
+}
+.survey_form .question_wrapper strong{
+	display: block;
+	text-align: center;
+	width: 30px;
+	font-size: 15px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-top: 5px;
+	border-radius: 100%;
+	border: 1px solid #ff5d00;
+	color: #ff5d00;
+}
+.survey_form .question_wrapper .question_description{
+	float: right;
+	width: 88%;
+}
+.survey_form .question_wrapper div.input,
+.survey_form .question_wrapper fieldset{
+	border:0;
+	padding: 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+.survey_form .question_wrapper div.input{
+	margin: 30px 0;
+}
+.survey_form .question_wrapper fieldset legend{ display: none; }
+.survey_form .question_wrapper fieldset input{
+	width: auto;
+	margin: 0 5px 0 20px;
+}
