@@ -51,6 +51,13 @@ class SurveysController extends AppController {
 				if(!empty($respostas)){
 					$this->User->id = $current_user['User']['id'];
 					$this->User->saveField('personality_id', $respostas[0]['UserSurvey']['personality_id']);
+
+					$user_update = $this->User->find('first', array(
+						'conditions' => array('User.id' => $current_user['User']['id'])
+					));
+					$this->Session->write('current_user', $user_update);
+
+					$this->redirect(array('controller' => 'perfil', 'action' => 'index'));
 				} else {
 					$this->Session->setFlash('Por favor, preencha o questionário');
 				}

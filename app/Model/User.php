@@ -74,22 +74,59 @@ class User extends AppModel {
 	}
 
 	public function validaEmailRepetido(){
+		if(array_key_exists('id', $id = $this->data['User'])){
+			$id = $this->data['User']['id'];
+		} else {
+			$id = null;
+		}
+
 		$users = $this->find('count', array(
 			'conditions' => array('User.email' => $this->data['User']['email'])
 		));
-		if($users > 0){
-			return false;
+
+		if($users > 0 ){
+			if(is_null($id)){
+				return false;
+			} else {
+				$users = $this->find('first', array(
+					'conditions' => array('User.email' => $this->data['User']['email'])
+				));
+
+				if($id == $users['User']['id']){
+					return true;
+				} else {
+					return false;
+				}
+			}
 		} else {
 			return true;
 		}
 	}
 
 	public function validaUsernameRepetido(){
+		if(array_key_exists('id', $id = $this->data['User'])){
+			$id = $this->data['User']['id'];
+		} else {
+			$id = null;
+		}
+		
 		$users = $this->find('count', array(
 			'conditions' => array('User.username' => $this->data['User']['username'])
 		));
-		if($users > 0){
-			return false;
+		if($users > 0 ){
+			if(is_null($id)){
+				return false;
+			} else {
+				$users = $this->find('first', array(
+					'conditions' => array('User.username' => $this->data['User']['username'])
+				));
+
+				if($id == $users['User']['id']){
+					return true;
+				} else {
+					return false;
+				}
+			}
 		} else {
 			return true;
 		}

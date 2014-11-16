@@ -86,4 +86,59 @@ class UsersController extends AppController {
 			}
 		}
 	}
+
+	public function minha_conta(){
+		$this->layout = "perfil";
+		$user = $this->Session->read('current_user');
+		if(is_null($user)){
+			$this->redirect(array('controller' => 'perfil', 'action' => 'index'));
+		}
+
+		$this->set('current_user', $user);
+
+		$isPost = $this->request->isPost();
+		if($isPost && !empty($this->request->data)){
+			$this->request->data['User']['id'] = $user['User']['id'];
+			$this->request->data['User']['password'] = Security::hash($this->request->data['User']['password'], null, true);
+			$this->User->id = $user['User']['id'];
+			if($this->User->save($this->request->data)){
+				$current_user = $this->User->find('first', array('conditions' => array('User.id' => $user['User']['id'])));
+				$this->Session->write('current_user', $current_user);
+
+				$this->redirect(array('controller' => 'perfil', 'action' => 'index'));
+			} else {
+				$this->Session->setFlash("Erro ao salvar");
+			}
+		}
+	}
+
+	public function alterar_perfil(){
+		$this->layout = "perfil";
+
+		$current_user = $this->Session->read('current_user');
+		if(is_null($current_user)){
+			$this->redirect('/');
+		}
+
+		$this->set('current_user', $current_user);
+
+		$isPost = $this->request->isPost();
+		if($isPost && !empty($this->request->data)){
+			if(!empty($this->request->data['User']['imagem_perfil']['name'])){
+				$nome_imagem = $this->User->upload($this->request->data['User']['imagem_perfil'], 'img/perfil');
+
+				$this->User->id = $current_user['User']['id'];
+				if($this->User->saveField('imagem_perfil', $nome_imagem)){
+					$current_user = $this->User->find('first', array('conditions' => array('User.id' => $current_user['User']['id'])));
+					$this->Session->write('current_user', $current_user);
+
+					$this->redirect(array('controller' => 'Perfil', 'action' => 'index'));
+				} else {
+					$this->Session->setFlash("Erro ao salvar");
+				}
+			} else {
+				$this->Session->setFlash("Insira uma imagem para upload");
+			}
+		}
+	}
 }
