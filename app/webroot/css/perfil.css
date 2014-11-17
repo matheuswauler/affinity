@@ -38,11 +38,17 @@ footer.footer_perfil{
 .perfil_sidebar nav a:hover{
 	color: #ff5d00;
 }
+.perfil_sidebar nav a.resolver_questionario{
+	background: url('../img/resolver_questionario.png') left center no-repeat;
+}
 .perfil_sidebar nav a.minha_conta{
 	background: url('../img/minha_conta.png') left center no-repeat;
 }
 .perfil_sidebar nav a.alterar_senha{
 	background: url('../img/alterar_senha.png') left center no-repeat;
+}
+.perfil_sidebar nav a.resolver_questionario:hover{
+	background-image: url('../img/resolver_questionario_orange.png');
 }
 .perfil_sidebar nav a.minha_conta:hover{
 	background-image: url('../img/minha_conta_orange.png');
@@ -244,4 +250,22 @@ footer.footer_perfil{
 	outline: none;
 	margin: 10px 0;
 	cursor: pointer;
+}
+
+
+.redes a{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+.redes a.facebook{
+	background: url('../img/facebook.png') center no-repeat;
+}
+.redes a.twitter{
+	background: url('../img/twitter.png') center no-repeat;
+}
+.redes a.web_site{
+	background: url('../img/web_site.png') center no-repeat;
 }

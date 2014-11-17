@@ -32,7 +32,7 @@
 					echo $this->Html->link('Perfil', '/perfil');
 
 					if(is_null($current_user) || empty($current_user)){
-						echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
+						echo $this->Html->link('Cadastre-se', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
 					} else {
 						echo '<span class="current_user_header">';
 						if(empty($current_user['User']['imagem_perfil'])){
@@ -76,7 +76,7 @@
 
 			<nav>
 				<?php
-					echo $this->Html->link('Resolver questionário', array('controller' => 'Surveys', 'action' => 'index'));
+					echo $this->Html->link('Resolver questionário', array('controller' => 'Surveys', 'action' => 'index'), array('class' => 'resolver_questionario'));
 					echo '<hr />';
 					echo $this->Html->link('Minha conta', array('controller' => 'Users', 'action' => 'minha_conta'), array('class' => 'minha_conta'));
 					// echo $this->Html->link('Alterar senha', '/', array('class' => 'alterar_senha'));

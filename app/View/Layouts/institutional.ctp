@@ -36,7 +36,7 @@
 					echo $this->Html->link('Ajuda', '/pages/ajuda');
 
 					if(is_null($current_user) || empty($current_user)){
-						echo $this->Html->link('Sign Up', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
+						echo $this->Html->link('Cadastre-se', array('controller' => 'users', 'action' => 'register', 'full_base' => true), array('class' => 'signup_link'));
 					} else {
 						echo '<span class="current_user_header">';
 						if(empty($current_user['User']['imagem_perfil'])){

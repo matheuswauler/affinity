@@ -29,13 +29,13 @@
 					<nav class="redes">
 						<?php
 							if(!empty($value['User']['facebook'])){
-								echo $this->Html->link('Facebook', $value['User']['facebook'], array('target' => '_blank', 'class' => 'facebook'));
+								echo $this->Html->link('', $value['User']['facebook'], array('target' => '_blank', 'class' => 'facebook', 'title' => 'Facebook'));
 							}
 							if(!empty($value['User']['twitter'])){
-								echo $this->Html->link('Twitter', $value['User']['twitter'], array('target' => '_blank', 'class' => 'twitter'));
+								echo $this->Html->link('', $value['User']['twitter'], array('target' => '_blank', 'class' => 'twitter', 'title' => 'Twitter'));
 							}
 							if(!empty($value['User']['web_site'])){
-								echo $this->Html->link('Web Site', $value['User']['web_site'], array('target' => '_blank', 'class' => 'web_site'));
+								echo $this->Html->link('', $value['User']['web_site'], array('target' => '_blank', 'class' => 'web_site', 'title' => 'Web Site'));
 							}
 						?>
 					</nav>
