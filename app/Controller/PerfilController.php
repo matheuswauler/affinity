@@ -12,6 +12,7 @@ class PerfilController extends AppController {
 		}
 		if(is_null($user['User']['personality_id'])){
 			$this->Session->setFlash('Preencha o questionário antes de prosseguir');
+			$this->redirect('/');
 		}
 		$this->layout = "perfil";
 		$this->set('current_user', $user);

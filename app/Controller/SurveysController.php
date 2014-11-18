@@ -7,11 +7,24 @@ class SurveysController extends AppController {
 	public $components = array('Security');
 
 	public function beforeFilter(){
-		$this->Security->unlockActions = array('index');
+		if($this->action == 'index'){
+			$this->Security->unlockActions = array('index');
 
-		$current_user = $this->Session->read('current_user');
-		if(is_null($current_user)){
-			$this->redirect('/');
+			$current_user = $this->Session->read('current_user');
+			if(is_null($current_user)){
+				$this->redirect('/');
+			}
+		} else {
+			$user = $this->Session->read('current_user');
+			if(is_null($user)){
+				$this->Session->setFlash('Você precisa estar logado para acessar esta área.');
+				$this->redirect('/');
+			}
+			if($user['User']['role'] != 'adm'){
+				$this->Session->setFlash('Você não tem permissão para acessar esta área.');
+				$this->redirect('/');
+			}
+			$this->layout = "administrativo";
 		}
 	}
 
@@ -70,6 +83,52 @@ class SurveysController extends AppController {
 			'order' => 'RAND()'
 		));
 		$this->set('survey', $survey);
+	}
+
+
+	// ADMIN
+	public function index_admin(){
+		$dados = $this->Survey->find('all');
+		$this->set('dados', $dados);
+	}
+
+	public function create(){
+		$isPost = $this->request->isPost();
+
+		if($isPost && !empty($this->request->data)){
+			$last = $this->Survey->save($this->request->data);
+			if($last){
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('Erro ao inserir item.');
+			}
+		}
+	}
+
+	public function edit(){
+		$item = $this->Survey->find('first', array(
+			'conditions' => array('Survey.id' => $this->request->params['pass'][0])
+		));
+		$this->set('item', $item);
+
+		$isPost = $this->request->isPost();
+		if($isPost && !empty($this->request->data)){
+			$this->Survey->id = $this->request->params['pass'][0];
+			$last = $this->Survey->save($this->request->data);
+			if($last){
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('Erro ao editar item.');
+			}
+		}
+	}
+
+	public function delete(){
+		if($this->Survey->delete($this->request->params['pass'][0])){
+			$this->redirect(array('action' => 'index'));
+		} else {
+			$this->Session->setFlash('Erro ao deletar item.');
+		}
 	}
 
 }

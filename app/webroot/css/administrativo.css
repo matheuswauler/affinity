@@ -1,0 +1,40 @@
+header.perfil_header{
+	background: #1b2756;
+}
+
+.listagem_itens{
+	width: 100%;
+	border: 1px solid #f1f1f1;
+	border-collapse: collapse;
+}
+.listagem_itens th{
+	padding: 10px 0;
+	border: 1px solid #f1f1f1;
+	background: #555;
+	color: #fff;
+}
+.listagem_itens td{
+	padding: 5px;
+	border: 1px solid #f1f1f1;
+}
+
+.create_link,
+.edit_link,
+.delete_link{
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #fff;
+}
+.create_link{ background: #e8c620; margin: 0 0 10px 0; }
+.edit_link{ background: #0099ff; margin: 0 10px; }
+.delete_link{background: #e01414; }
+
+.perfil_dark_title{
+	margin: 0 0 20px;
+}
+
+.admin_menu a{
+	padding-left: 0 !important;
+}

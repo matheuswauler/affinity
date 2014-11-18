@@ -25,7 +25,11 @@ class UsersController extends AppController {
 			));
 			if(!empty($user)){
 				$this->Session->write('current_user', $user);
-				$this->redirect('/');
+				if($user['User']['role'] == "adm"){
+					$this->redirect(array('controller' => 'Personalities', 'action' => 'index'));
+				} else {
+					$this->redirect('/');
+				}
 			} else {
 				$this->Session->setFlash('Usuário inválido!');
 				$this->redirect('/');
