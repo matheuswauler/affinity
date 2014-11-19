@@ -17,7 +17,7 @@
 			<? foreach ($dados as $key => $dado) { ?>
 				<tr>
 					<td align="center"><?= $dado['Survey']['id'] ?></td>
-					<td><?= $dado['Survey']['personality_id'] ?></td>
+					<td><?= $dado['Personality']['name'] ?></td>
 					<td><?= $dado['Survey']['question'] ?></td>
 
 					<td align="center">

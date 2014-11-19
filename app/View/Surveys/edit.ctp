@@ -3,9 +3,11 @@
 
 	<?php
 
-		echo $this->Form->create(array('action' => 'edit/' . $item['Personalitie']['id'], 'class' => 'minha_conta_form admin_form'));
+		echo $this->Form->create(array('action' => 'edit/' . $item['Survey']['id'], 'class' => 'minha_conta_form admin_form'));
 
-		echo $this->Form->input('name', array('label' => 'Nome: ', 'value' => $item['Personalitie']['name']));
+		echo $this->Form->input('personality_id', array('label' => 'Personalidade: ', 'value' => $item['Survey']['personality_id']));
+
+		echo $this->Form->input('question', array('label' => 'Questão: ', 'value' => $item['Survey']['question']));
 		
 		echo $this->Form->end('Salvar');
 

@@ -3,7 +3,7 @@
 class SurveysController extends AppController {
 
 	public $name = 'Surveys';
-	public $uses = array('Survey', 'User', 'UserSurvey');
+	public $uses = array('Survey', 'User', 'UserSurvey', 'Personality');
 	public $components = array('Security');
 
 	public function beforeFilter(){
@@ -93,6 +93,9 @@ class SurveysController extends AppController {
 	}
 
 	public function create(){
+		$personalities = $this->Survey->Personality->find('list');
+		$this->set(compact('personalities'));
+
 		$isPost = $this->request->isPost();
 
 		if($isPost && !empty($this->request->data)){
@@ -106,6 +109,9 @@ class SurveysController extends AppController {
 	}
 
 	public function edit(){
+		$personalities = $this->Personality->find('list');
+		$this->set(compact('personalities'));
+
 		$item = $this->Survey->find('first', array(
 			'conditions' => array('Survey.id' => $this->request->params['pass'][0])
 		));
