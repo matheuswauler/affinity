@@ -98,7 +98,7 @@ class SurveysController extends AppController {
 		if($isPost && !empty($this->request->data)){
 			$last = $this->Survey->save($this->request->data);
 			if($last){
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index_admin'));
 			} else {
 				$this->Session->setFlash('Erro ao inserir item.');
 			}
@@ -116,7 +116,7 @@ class SurveysController extends AppController {
 			$this->Survey->id = $this->request->params['pass'][0];
 			$last = $this->Survey->save($this->request->data);
 			if($last){
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index_admin'));
 			} else {
 				$this->Session->setFlash('Erro ao editar item.');
 			}
@@ -125,7 +125,7 @@ class SurveysController extends AppController {
 
 	public function delete(){
 		if($this->Survey->delete($this->request->params['pass'][0])){
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'index_admin'));
 		} else {
 			$this->Session->setFlash('Erro ao deletar item.');
 		}

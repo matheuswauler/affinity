@@ -3,7 +3,7 @@
 class PerfilController extends AppController {
 
 	public $name = 'Perfil';
-	public $uses = array('User', 'Personalitie');
+	public $uses = array('User', 'Personality');
 
 	public function beforeFilter(){
 		$user = $this->Session->read('current_user');
@@ -21,8 +21,8 @@ class PerfilController extends AppController {
 	public function index(){
 		$user = $this->Session->read('current_user');
 
-		$personalidade = $this->Personalitie->find('first', array(
-			'conditions' => array('Personalitie.id' => $user['User']['personality_id'])
+		$personalidade = $this->Personality->find('first', array(
+			'conditions' => array('Personality.id' => $user['User']['personality_id'])
 		));
 		$this->set('personalidade', $personalidade);
 

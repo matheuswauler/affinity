@@ -10,8 +10,8 @@
 		<?php
 			echo $this->Form->create(array('url' => $this->Html->url(array('controller' => 'Users','action' => 'login'), true)));
 
-			echo $this->Form->input('username', array('label' => 'Username'));
-			echo $this->Form->input('senha', array('label' => 'Senha', 'type' => 'password'));
+			echo $this->Form->input('User.username', array('label' => 'Username'));
+			echo $this->Form->input('User.senha', array('label' => 'Senha', 'type' => 'password'));
 
 			echo $this->Form->end('OK');
 		?>

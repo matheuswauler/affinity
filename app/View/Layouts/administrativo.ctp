@@ -30,6 +30,8 @@
 		<div class="content">
 			<nav>
 				<?php
+					if($current_user['User']['role'] == 'adm') echo $this->Html->link('Administrativo', array('controller' => 'Personalities', 'action' => 'index'));
+					
 					echo $this->Html->link('Perfil', '/perfil');
 
 					if(is_null($current_user) || empty($current_user)){
@@ -79,6 +81,7 @@
 				<?php
 					echo $this->Html->link('Personalidades', array('controller' => 'Personalities', 'action' => 'index'));
 					echo $this->Html->link('Questionário', array('controller' => 'Surveys', 'action' => 'index_admin'));
+					echo $this->Html->link('Institucional', array('controller' => 'Institutionals', 'action' => 'index'));
 				?>
 			</nav>
 		</div>

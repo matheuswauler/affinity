@@ -1,10 +1,10 @@
 <article class="personalidade">
-	<h1><span>Personalidade predominante:</span> <strong><?= $personalidade['Personalitie']['name'] ?></strong></h1>
+	<h1><span>Personalidade predominante:</span> <strong><?= $personalidade['Personality']['name'] ?></strong></h1>
 
 	<a href="#" id="show_personality">+ Ver descrição completa</a>
 
 	<div class="personalidade_texto hidden_text">
-		<?= $personalidade['Personalitie']['description'] ?>
+		<?= $personalidade['Personality']['description'] ?>
 	</div>
 </article>
 

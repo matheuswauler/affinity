@@ -1,5 +1,5 @@
 <div class="padding_box">
-	<h1 class="perfil_dark_title">Editar personalidades</h1>
+	<h1 class="perfil_dark_title">Editar questão</h1>
 
 	<?php
 

@@ -6,9 +6,9 @@
 
 <div class="content">
 	<article class="content_text">
-		<h1><?= $pages[1]['Page']['title']; ?></h1>
+		<h1><?= $pages[1]['Institutional']['title']; ?></h1>
 
-		<?= $pages[1]['Page']['description']; ?>
+		<?= $pages[1]['Institutional']['description']; ?>
 
 		<ul class="equipe clearfix">
 			<?php 

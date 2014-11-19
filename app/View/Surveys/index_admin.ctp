@@ -1,5 +1,5 @@
 <div class="padding_box">
-	<h1 class="perfil_dark_title">Personalidades</h1>
+	<h1 class="perfil_dark_title">Questionário</h1>
 
 	<?= $this->Html->link('Novo', array('controller' => 'Surveys', 'action' => 'create'), array('class' => 'create_link')); ?>
 	

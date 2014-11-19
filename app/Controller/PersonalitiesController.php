@@ -4,7 +4,7 @@ class PersonalitiesController extends AppController {
 
 	public $uses = array('Personality');
 
-	public $name = 'Personalitys';
+	public $name = 'Personalities';
 
 	public function beforeFilter(){
 		$user = $this->Session->read('current_user');

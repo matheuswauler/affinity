@@ -6,8 +6,8 @@
 
 <div class="content">
 	<article class="content_text">
-		<h1><?= $pages[0]['Page']['title']; ?></h1>
+		<h1><?= $pages[0]['Institutional']['title']; ?></h1>
 
-		<?= $pages[0]['Page']['description']; ?>
+		<?= $pages[0]['Institutional']['description']; ?>
 	</article>
 </div>

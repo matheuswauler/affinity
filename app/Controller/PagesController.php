@@ -3,7 +3,7 @@ App::uses('AppController', 'Controller');
 
 class PagesController extends AppController {
 
-	public $uses = array('Page', 'User');
+	public $uses = array('Institutional', 'User');
 
 	public function beforeFilter(){
 		$user = $this->Session->read('current_user');
@@ -34,8 +34,8 @@ class PagesController extends AppController {
 		}
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 
-		$pages = $this->Page->find('all', array(
-			'order' => array('Page.id ASC')
+		$pages = $this->Institutional->find('all', array(
+			'order' => array('Institutional.id ASC')
 		));
 		$this->set('pages', $pages);
 

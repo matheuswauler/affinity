@@ -94,7 +94,9 @@ footer.footer_perfil{
 }
 .minha_conta_form input[type=text],
 .minha_conta_form input[type=email],
-.minha_conta_form input[type=password]{
+.minha_conta_form input[type=password],
+textarea,
+select{
 	width: 320px;
 }
 .minha_conta_form input[type=submit]{
@@ -108,6 +110,12 @@ footer.footer_perfil{
 	outline: none;
 	margin: 10px 0 10px 180px;
 	cursor: pointer;
+}
+textarea{
+	height: 200px;
+}
+.textarea label{
+	vertical-align: top;
 }
 
 .personalidade{
