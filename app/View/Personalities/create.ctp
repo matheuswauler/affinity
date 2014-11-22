@@ -6,6 +6,8 @@
 		echo $this->Form->create(array('action' => 'create', 'class' => 'minha_conta_form admin_form'));
 
 		echo $this->Form->input('name', array('label' => 'Nome: '));
+
+		echo $this->Form->input('description', array('label' => 'Descrição: '));
 		
 		echo $this->Form->end('Salvar');
 

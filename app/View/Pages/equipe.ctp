@@ -13,6 +13,10 @@
 		<ul class="equipe clearfix">
 			<?php 
 				foreach ($adm_users as $key => $adm) {
+					if($adm['User']['username'] == 'carla' || $adm['User']['username'] == 18){
+						continue;
+					}
+					
 					echo '<li>';
 					if(empty($adm['User']['imagem_perfil'])){
 						echo '<img src="'. $this->Html->url('/', true) .'app/webroot/img/default_perfil.png' .'" />';

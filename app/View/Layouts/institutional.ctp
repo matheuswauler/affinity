@@ -7,7 +7,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		Teste
+		Affinity
 	</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 	<?php
@@ -28,6 +28,10 @@
 <body>
 	<header class="institucional_header">
 		<div class="content">
+			<div class="logo_wrapper">
+				<img src="<?= $this->Html->url('/', true) ?>app/webroot/img/affinity_logo.png" />
+			</div>
+
 			<nav>
 				<?php
 					echo $this->Html->link('Inicial', '/');
