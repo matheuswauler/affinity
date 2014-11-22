@@ -29,7 +29,9 @@
 	<header class="institucional_header">
 		<div class="content">
 			<div class="logo_wrapper">
-				<img src="<?= $this->Html->url('/', true) ?>app/webroot/img/affinity_logo.png" />
+				<a href="<?= $this->Html->url('/', true) ?>">
+					<img src="<?= $this->Html->url('/', true) ?>app/webroot/img/affinity_logo.png" />
+				</a>
 			</div>
 
 			<nav>
