@@ -29,4 +29,16 @@
 			?>
 		</ul>
 	</article>
+
+	<article class="content_text">
+		<h1>Stakeholders</h1>
+		<ul class="equipe clearfix">
+			<li>
+				<img src="<?= $this->Html->url('/', true); ?>app/webroot/img/stakeholders/ivete.jpg" />
+				<h2>Ivete Turski</h2>
+				<span>Psicóloga</span>
+			</li>
+		</ul>
+		
+	</article>
 </div>
